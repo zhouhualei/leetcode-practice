@@ -5,10 +5,10 @@ import spock.lang.Specification
 /**
  * Created by warzhou1 on 4/19/15.
  */
-class LRUCacheByLRUMapSpec extends Specification {
+class LRUCacheByGuavaSpec extends Specification {
     def "test Cache Simple Get and Set"() {
         setup: "a cache instace is created"
-            def cache = new LRUCacheByLRUMap(10)
+            def cache = new LRUCacheByGuava(10)
         when:
             cache.set(2, 1)
         then:
@@ -22,7 +22,7 @@ class LRUCacheByLRUMapSpec extends Specification {
 
     void "test Cache Removal"() {
         setup: "a cache instace is created"
-            def cache = new LRUCacheByLRUMap(1);
+            def cache = new LRUCacheByGuava(1);
         when:
             cache.set(2, 1);
         then:
